@@ -36,7 +36,7 @@
 
 // export default Body
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {  Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Profile from './Profile';
 import Feed from './Feed';
@@ -44,7 +44,6 @@ import Login from './Login';
 
 const Body = () => {
   return (
-    <Router>
       <Routes>
         {/* Main Home route */}
         <Route path="/" element={<Home />}>
@@ -56,7 +55,6 @@ const Body = () => {
         {/* Login route */}
         <Route path="/login" element={<Login />} />
       </Routes>
-    </Router>
   );
 };
 
