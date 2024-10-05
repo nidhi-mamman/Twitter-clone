@@ -24,10 +24,7 @@ const Body = () => {
         },
         {
             path:"/login",
-            element:<Login/>
-
-        
-            
+            element:<Login/>    
         }
     ])
   return (
