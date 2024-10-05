@@ -69,7 +69,6 @@ const Login = () => {
       console.error(error);
     }
   };
-
   return (
     <div className='w-screen h-screen flex items-center justify-center px-4 md:px-0'>
       <div className='flex flex-col md:flex-row items-center w-full md:w-[60%] justify-evenly'>
