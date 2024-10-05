@@ -78,7 +78,7 @@ const Login = () => {
         <div className='w-full md:w-auto'>
           <h1 className=' font-bold text-3xl md:text-5xl my-3'>Happening now</h1>
           <h1 className='text-xl md:text-2xl font-bold mt-4 mb-2'>{isLogin ? "Login" : "SignUp"}</h1>
-          <form onSubmit={submitHandler} className='flex flex-col w-full md:w-[90%]'>
+          <form className='flex flex-col w-full md:w-[90%]'>
             {
               !isLogin && (
                 <>
@@ -92,7 +92,7 @@ const Login = () => {
 
             {error && <p className='text-red-500'>{error}</p>}
 
-            <button className='rounded-full text-white font-bold px-3 py-2 bg-[#109BF0] w-full'>{isLogin ? "Login" : "SignUp"}</button>
+            <button className='rounded-full text-white font-bold px-3 py-2 bg-[#109BF0] w-full' onSubmit={submitHandler}>{isLogin ? "Login" : "SignUp"}</button>
             <div>
               <h1 className='cursor-pointer my-3 '>{isLogin ? "Do not have an account?" : "Already have an account?"}<span className="text-[#109BF0] font-bold" onClick={loginSignupHandler}>{isLogin ? "Signup" : "Login"}</span></h1>
             </div>
