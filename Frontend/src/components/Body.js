@@ -1,37 +1,37 @@
-import React from 'react'
-import {createBrowserRouter, RouterProvider} from 'react-router-dom'
-import Home from './Home'
-import Profile from './Profile'
-import Feed from './Feed'
-import Login from './Login'
-// import { Bookmarks } from ''
-const Body = () => {
-    const userbrowser=createBrowserRouter([
-        {
-            path:"/",
-            element:<Home/>,
-            children:[
-              {
-                path:'/',
-                element:<Feed/>
-              },
-              {
-                path:'/profile/:id',
-                element:<Profile/>
-              }
-            ]
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './Home';
+import Profile from './Profile';
+import Feed from './Feed';
+import Login from './Login';
 
+const Body = () => {
+  const userBrowser = createBrowserRouter([
+    {
+      path: '/', // Main layout route
+      element: <Home />, // Home layout with Outlet
+      children: [
+        {
+          path: '', // Render Feed on the root `/` inside Home
+          element: <Feed />
         },
         {
-            path:"/login",
-            element:<Login/>    
-        }
-    ])
+          path: 'profile/:id', // Profile should be relative path inside Home
+          element: <Profile />
+        },
+      ]
+    },
+    {
+      path: '/login', // Separate login route
+      element: <Login />
+    }
+  ]);
+
   return (
     <div>
-      <RouterProvider router={userbrowser}/>
+      <RouterProvider router={userBrowser} />
     </div>
-  )
-}
+  );
+};
 
-export default Body
+export default Body;
