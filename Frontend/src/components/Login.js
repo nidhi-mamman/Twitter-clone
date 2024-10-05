@@ -39,6 +39,9 @@ const Login = () => {
       let res;
       if (isLogin) {
         res = await axios.post(`${USER_API_END_POINT}/login`, { email, password }, {
+          headers: {
+            'Content-Type': "application/json"
+          },
           withCredentials: true
         });
         dispatch(getUser(res?.data?.user));
