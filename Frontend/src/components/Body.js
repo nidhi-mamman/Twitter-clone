@@ -36,7 +36,7 @@
 
 // export default Body
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Profile from './Profile';
 import Feed from './Feed';
@@ -46,14 +46,14 @@ const Body = () => {
   return (
     <Router>
       <Routes>
-        {/* Main route for Home */}
+        {/* Main Home route */}
         <Route path="/" element={<Home />}>
-          {/* Nested route for Feed */}
-          <Route index element={<Feed />} />
-          {/* Nested route for Profile */}
+          {/* Child routes under Home */}
+          <Route index element={<Feed />} />  {/* This acts as the default route under Home */}
           <Route path="profile/:id" element={<Profile />} />
         </Route>
-        {/* Route for Login */}
+
+        {/* Login route */}
         <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
